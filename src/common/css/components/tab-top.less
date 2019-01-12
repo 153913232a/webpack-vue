@@ -1,0 +1,36 @@
+.tab-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 38px;
+  background: #80bd01;
+  display: flex;
+  z-index: 100;
+  li {
+    position: relative;
+    line-height: 38px;
+    flex: 1;
+    text-align: center;
+    & + li {
+      &::after {
+        position: absolute;
+        top: 10px;
+        bottom: 10px;
+        left: 0;
+        content: "";
+        border-left: 1px solid #5e8a01;
+        border-right: 1px solid #a2f001;
+      }
+    }
+    a {
+      display: block;
+      &.active {
+        margin: 5px 10px;
+        line-height: 28px;
+        border-radius: 8px;
+        background: #5e8a01;
+      }
+    }
+  }
+}

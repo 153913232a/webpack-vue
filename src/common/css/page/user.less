@@ -1,0 +1,63 @@
+.slidel-enter-active {
+  transition: all, .3s
+}
+.slidel-enter{
+  transform: translate3d(100%, 0, 0)
+}
+.user-index{
+  .headimg{
+    padding: 20px;
+    background: #87c701;
+    .user-headimg{
+      width: 80px;
+      height: 80px;
+      margin-right: 10px;
+      border-radius: 50%;
+      border: 1px solid #ddd;
+      background-size: cover;
+      background-color: #eee;
+    }
+    .name{
+      padding-top: 10px;
+      line-height: 24px;
+      font-size: 16px;
+      color: #fff;
+    }
+    .score{
+      font-size: 12px;
+      color: #eee;
+    }
+  }
+  .tab-nav{
+    text-align: center;
+    background: #eeeeee;
+    li{
+      line-height: 38px;
+      border-bottom: 3px solid transparent;
+      &.on{
+        border-bottom: 3px solid #80bd01;
+      }
+    }
+  }
+  .list{
+    a{
+      overflow: hidden;
+      height: 28px;
+      padding: 5px 10px;
+      line-height: 28px;
+      border-bottom: 1px solid #eee;
+      .tit{
+        font-size: 14px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        color: #333333;
+      }
+      .time{
+        padding-left: 20px;
+        font-size: 12px;
+        color: #aaa;
+      }
+    }
+  }
+}
