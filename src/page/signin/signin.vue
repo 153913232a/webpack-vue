@@ -36,7 +36,7 @@
     components: {VHeader},
     data() {
       return {
-        accessToken: '1f3dc0c2-6b54-4a02-b184-24be85bb6ec3',
+        accessToken: '',
         isShow:false,
         msg: '登陆',
         user: {}
@@ -44,6 +44,10 @@
     },
     methods: {
       async login() {
+        if(!this.accessToken) {
+          alert('不能为空！')
+          return
+        }
         this.msg = '登录中...'
         let user = await loginAccessToken({accesstoken: this.accessToken})
         this.msg = '登录'

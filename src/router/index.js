@@ -5,6 +5,7 @@ import Message from '../page/message/message'
 import Create from '../page/create/create'
 import User from '../page/user/user'
 import Signin from '../page/signin/signin'
+import Usero from '../page/user-o/usero'
 import All from '../components/all/all'
 import Ask from '../components/ask/ask'
 import Job from '../components/job/job'
@@ -66,6 +67,10 @@ export default new Router({
     {
       path: '/topic/:id',
       component: Detail
+    },
+    {
+      path: '/usero/:id',
+      component: Usero
     }
   ]
 })

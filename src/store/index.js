@@ -8,7 +8,8 @@ const store = new Vuex.Store({
     user: JSON.stringify(storage.get('user'))? storage.get('user'): {},
     currentTab: [],
     isShow: false,
-    routeIndex: 0
+    routeIndex: 0,
+    notReadNum: 0
   },
   mutations: {
     setCurrentTab(state, tab) {
@@ -28,6 +29,9 @@ const store = new Vuex.Store({
     },
     setShow(state, isShow) {
       state.isShow = isShow
+    },
+    setNotReadNum(state, num) {
+      state.notReadNum = num
     }
   },
   actions: {
