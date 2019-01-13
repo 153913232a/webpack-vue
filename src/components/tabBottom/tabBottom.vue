@@ -6,6 +6,7 @@
                  :to="tab.to"
                  @click="toBottomTab(tab)">
       <i class="iconfont" :class="tab.icon"></i>
+      <em v-show="tab.hasNum && $store.state.notReadNum">{{$store.state.notReadNum}}</em>
       <div>{{tab.name}}</div>
     </div>
   </div>
@@ -17,10 +18,10 @@
     data() {
       return{
         routerTab: [
-          {name: '首页', icon: 'icon-shouye', to: '/home'},
-          {name: '发表', icon: 'icon-fabu', to: "/topic/create"},
-          {name: '消息', icon: 'icon-xiaoxi', to: "/my/message"},
-          {name: '我的', icon: 'icon-wode'}
+          {name: '首页', icon: 'icon-shouye', to: '/home', hasNum: false},
+          {name: '发表', icon: 'icon-fabu', to: "/topic/create", hasNum: false},
+          {name: '消息', icon: 'icon-xiaoxi', to: "/my/message", hasNum: true},
+          {name: '我的', icon: 'icon-wode', hasNum: false}
         ]
       }
     },
