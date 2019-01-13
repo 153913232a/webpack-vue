@@ -16,7 +16,8 @@ export function get(url) {
 }
 export function get_II(url) {
   return function (urlParams, data) {
-    return axios.get(BASE_URL + url + urlParams, data).then(res => {
+    return axios.get(BASE_URL + url + urlParams,
+        { params: data}).then(res => {
       const {status, data} = res
       if (status === STATUS_OK && data.success) {
         return data.data
@@ -34,7 +35,10 @@ export function post(url) {
     ).then(res => {
       const {status, data} = res
       if (status === STATUS_OK && data.success
-          && (url==='/accesstoken' || /^\/reply\/\w+\/ups/.test(url + urlParam) || /^\/topic\/\w+\/replies$/.test(url + urlParam))) {
+          && (url==='/accesstoken'
+              || /^\/reply\/\w+\/ups/.test(url + urlParam)
+              || /^\/topic\/\w+\/replies$/.test(url + urlParam)
+              || /^\/message\/mark_one\/\w+/.test(url + urlParam))) {
         return data
       }
       else if (status === STATUS_OK && data.success) {

@@ -7,6 +7,8 @@ const getUserInfo = get_II('/user')
 const createTopics = post('/topics')
 const createTopic = post('/topic')
 const Ups = post('/reply')
+const getMessage = get_II('/messages')
+const markOneMessage = post('/message/mark_one')
 
 export {
   getTopic,
@@ -15,5 +17,7 @@ export {
   getUserInfo,
   createTopics,
   createTopic,
-  Ups
+  Ups,
+  getMessage,
+  markOneMessage
 }
