@@ -15,7 +15,15 @@ const config  ={
     filename:"js/[name].js"
   },
   devServer: {
-    contentBase: './dist' // devServer会从这个目录下寻找编译后的文件然后加载到模板上
+    contentBase: './dist', // devServer会从这个目录下寻找编译后的文件然后加载到模板上,
+    proxy: {
+      '/api/*': {
+        target: 'https://cnodejs.org',
+        pathRewrite: { '^/api': '/api' },
+        changeOrigin: true,
+        secure: false, // 接受 运行在 https 上的服务
+      }
+    }
   },
   module: {
     rules: [
